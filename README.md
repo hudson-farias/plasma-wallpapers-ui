@@ -7,7 +7,7 @@ Interface web para browsear wallpapers, escolher monitor, crop (MVP) e aplicar n
 - **Frontend:** SvelteKit + Vite
 - **Backend:** FastAPI (Python) + SQLAlchemy
 - **Cache:** `gallery-dl` em runtime (Pinterest → cache local)
-- **Banco:** PostgreSQL (Docker) ou SQLite (dev local)
+- **Banco:** SQLite
 - **Container:** Docker Compose
 
 ## Fluxo de dados
@@ -44,14 +44,7 @@ Volumes:
 | `cache-data` | cache runtime (`/app/cache`) |
 | `favorites-data` | favoritos permanentes (`/app/favorites`) |
 | `applied-data` | crops aplicados |
-| `pg-data` | PostgreSQL |
 
-## Banco de dados
-
-| Ambiente | Padrão |
-|----------|--------|
-| Docker Compose | PostgreSQL |
-| Dev local | SQLite em `backend/data/sources.db` |
 
 ## Desenvolvimento local (sem Docker)
 
@@ -132,6 +125,10 @@ backend/
 └── data/
     └── sources.db
 ```
+
+## Licença
+
+Este projeto está licenciado sob a [PolyForm Noncommercial License 1.0.0](LICENSE). Uso, modificação e distribuição são permitidos apenas para fins **não comerciais**.
 
 ## Próximos passos
 
