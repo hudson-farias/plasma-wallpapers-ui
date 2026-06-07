@@ -92,7 +92,6 @@ Favoritos: `favorites/{pasta}/{board}__{arquivo}` — cópia permanente, sobrevi
 
 | Método | Rota | Descrição |
 |--------|------|-----------|
-| GET | `/api/health` | Health check |
 | GET | `/api/sources` | Lista fontes |
 | POST | `/api/sources` | Adiciona fonte `{ "source": "https://..." }` |
 | DELETE | `/api/sources/{id}` | Remove fonte + cache |
@@ -110,7 +109,7 @@ Favoritos: `favorites/{pasta}/{board}__{arquivo}` — cópia permanente, sobrevi
 | POST | `/api/apply` | Aplica imagem (`from_favorites: true` opcional) |
 | POST | `/api/apply/crop` | Crop + aplica (PNG) |
 
-## Estrutura (backend — padrão portfolio-api)
+## Estrutura (backend)
 
 ```
 backend/
@@ -127,8 +126,9 @@ backend/
 │   ├── sources.py
 │   ├── plasma.py
 │   └── images.py
-├── cache/            # runtime (gitignored)
-├── favorites/        # cópias permanentes (gitignored)
+├── storage/
+│   ├── cache/            # runtime (gitignored)
+│   └── favorites/        # cópias permanentes (gitignored)
 └── data/
     └── sources.db
 ```
@@ -136,6 +136,6 @@ backend/
 ## Próximos passos
 
 - [ ] Crop interativo no browser (Cropper.js)
-- [ ] Suporte GIF animado
+- [x] Suporte GIF animado
 - [ ] Lock screen
 - [ ] Build produção (frontend estático servido pelo FastAPI)
